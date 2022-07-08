@@ -1,0 +1,63 @@
+﻿@page
+@model ClientRegistration.Pages.Clients.EditModel
+@{
+}
+
+<br>
+<h2>Edit Clients</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<form method="POST">
+    <input type="hidden" name="id" value="@Model.clientInfo.id"/>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-lable">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.clientInfo.name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-lable">Age</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" name="age" value="@Model.clientInfo.age">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-lable">Gender</label>
+        <div class="col-sm-6">
+            <select name="gender" value="@Model.clientInfo.gender" selected="@Model.clientInfo.gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-form-lable-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+</form>
