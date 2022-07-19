@@ -24,50 +24,8 @@
                 <td>
                     <a class='btn btn-primary btn-sm' href='/Clients/Edit?id=@item.id'>Edit</a>
                     <a class='btn btn-danger btn-sm' href='/Clients/Delete?id=@item.id'>Delete</a>
-                    @*<input type="button" value="Delete" class="btn btn-danger" onclick="deleteConfirm('@item.id')" />*@
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-@*
-<div class="modal fade" id="delete-conformation" tabindex="-1" role="dialog" aria-labelledby="deleteconformation">
-    <div class="modal-dialog" style="width:501px !important;margin:0 auto;">
-        <div class="modal-content">
-            <div class="modal-header" style="background:#d9534f;color:white;">
-                <h4 class="modal-title" id="delete-conformation">
-                    Delete Confirmation
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <span>
-                                Are you sure you want to delete?
-                            </span>
-                            <strong id="deletedValueName">
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
-                    <a class='btn btn-danger btn-sm' href='/Clients/Delete?id='>Delete</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-@section Scripts{
-    <script type="text/javascript">
-        //this is only display bootstrap modal pop up dialog
-        var deleteConfirm = function (val) {
-            $('#deletedValueName').text(val);
-            $('#delete-conformation').modal('show');
-        }
-    </script>
-}*@
